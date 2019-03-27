@@ -11,7 +11,7 @@ AWS Amazon web services Platform Concepts and Components
 
 <br>
 
-#### AWS Global Infrastructure
+### AWS Global Infrastructure
 
 -	13 regions
 	-	각각의 region은 multiple AZ이 구성되어 있다.
@@ -23,7 +23,7 @@ AWS Amazon web services Platform Concepts and Components
 
 <br>
 
-#### Network
+### Network
 
 -	Route53
 	-	도메인 네임 서비스
@@ -35,7 +35,7 @@ AWS Amazon web services Platform Concepts and Components
 
 <br>
 
-#### Compute
+### Compute
 
 -	EC2 (Elastic Cloud Compute)
 	-	AWS cloud에 있는 Virtual instance
@@ -48,7 +48,7 @@ AWS Amazon web services Platform Concepts and Components
 
 <br>
 
-#### Storage
+### Storage
 
 -	S3 (Simple Storage Service)
 	-	File/object 기반 저장소
@@ -68,7 +68,7 @@ AWS Amazon web services Platform Concepts and Components
 
 <br>
 
-#### Databases
+### Databases
 
 -	RDS (Relational Database Services)
 	-	6개의 DB(MS SQL, Oracle, Postgresql, MySQL, MariaDB, Amazon Aurora)로 구성
@@ -79,7 +79,7 @@ AWS Amazon web services Platform Concepts and Components
 
 <br>
 
-#### Analytics
+### Analytics
 
 -	Redshift
 	-	기존 비지니스 intelligence 툴의 데이터 분석을 위한 data warehousing solution
@@ -90,7 +90,7 @@ AWS Amazon web services Platform Concepts and Components
 
 <br>
 
-#### Application Services
+### Application Services
 
 -	SQS (Simple Queue Services)
 	-	메시징 큐 서비스
@@ -105,7 +105,7 @@ AWS Amazon web services Platform Concepts and Components
 
 <br>
 
-#### Deployment and Management
+### Deployment and Management
 
 -	Opsworks
 	-	Application Management service, 앱을 설치하고 운영한다. (automation)
@@ -158,7 +158,7 @@ AWS Amazon web services Platform Concepts and Components
 
 <br>
 
-#### Identity Access Management (IAM)
+### Identity Access Management (IAM)
 
 -	Central control of AWS account
 -	Share access
@@ -176,7 +176,7 @@ AWS Amazon web services Platform Concepts and Components
 
 <br>
 
-#### S3
+### S3
 
 -	Secure, durable, highly scalable object storage. “Unlimited storage”. A hard drive in the cloud.
 -	Object based NOT block based storage (no OS or DBs -&gt; that’s Elastic Block Storage (EBS)). i.e. allows you to upload files
@@ -231,7 +231,7 @@ AWS Amazon web services Platform Concepts and Components
 
 <br>
 
-#### S3 – Security & Encryption
+### S3 – Security & Encryption
 
 -	By default, all new buckets are PRIVATE
 -	2 types of access control for buckets
@@ -252,7 +252,7 @@ AWS Amazon web services Platform Concepts and Components
 
 <br>
 
-#### CloudFront – CDN (Content Delivery Network)
+### CloudFront – CDN (Content Delivery Network)
 
 -	Edge Location – Where the content will be cached (different from Region or AZ)
 	-	Not just read only, can write to them too.
@@ -272,7 +272,7 @@ AWS Amazon web services Platform Concepts and Components
 
 <br>
 
-#### Storage Gateway
+### Storage Gateway
 
 -	Connects on-prem software appliance with AWS storage to provide seamless & secure between an org’s on-prem IT environment & AWS storage infrastructure.
 -	Asynch replication backed up to S3 as EBS snapshots
@@ -302,7 +302,7 @@ AWS Amazon web services Platform Concepts and Components
 
 <br>
 
-#### Snowball (Import/Export) 2 Types:
+### Snowball (Import/Export) 2 Types:
 
 -	Import/Export Disk
 	-	You ship your disks to AWS site of your choice
@@ -318,7 +318,7 @@ AWS Amazon web services Platform Concepts and Components
 
 <br>
 
-#### S3 Transfer Acceleration (probably not in exam yet)
+### S3 Transfer Acceleration (probably not in exam yet)
 
 -	Use Edge Network to accelerate uploads to your S3 bucket
 -	Better performance the further you are away from your bucket
@@ -326,7 +326,7 @@ AWS Amazon web services Platform Concepts and Components
 
 <br>
 
-#### EC2 (Elastic Compute Cloud)
+### EC2 (Elastic Compute Cloud)
 
 – “A web service that provides resizable compute capacity in the cloud. Reduces time required to obtain & boot new server instances to minutes allowing the ability to quickly scale capacity both up and down.”
 
@@ -350,7 +350,7 @@ Pricing models:
 
 <br>
 
-#### EC2 Instance Types:
+### EC2 Instance Types:
 
 (Reminder is mrmcgiftpx = Docter MC Gift Pics)
 
@@ -368,13 +368,13 @@ Pricing models:
 
 <br>
 
-#### EBS (Elastic Block Storage)
+### EBS (Elastic Block Storage)
 
 – Storage volumes that are attached to EC2 instances (think VMDKs) - EBS versus EFS versus S3 (https://stackoverflow.com/questions/29575877/aws-efs-vs-ebs-vs-s3-differences-when-to-use) - Can’t attach 1 EBS instance to 2 EC2 instances (use EFS for that) - Can attach multiple EBS instances to 1 EC2 instance - How to “grow” an EBS volume: - Detach the original Amazon EBS volume. - Create a snapshot of the original Amazon EBS volume’s data in Amazon S3. - Create a new Amazon EBS volume from the snapshot, but specify a larger size than the original volume. - Attach the new, larger volume to your Amazon EC2 instance in place of the original. (In many cases, an OS-level utility must also be used to expand the file system.) - Delete the original Amazon EBS volume. - Placed in specific AZs & automatically replicated - EBS 3 Volume Types - General Purpose SSD (GP2) - 99.999% availability - Ratio of 3 IOPs per GB & ability to burst up to 3k IOPS for short periods for volumes under 1Gb. - Use if you need up to 10k IOPS - Provisioned IOPS SSD (I01) - For I/O intensive apps (large DBs). - Use if you need more than 10k IOPS - Magnetic (standard) - Cheapest - Good for infrequently accessed data (fileservers)
 
 <br>
 
-#### \*Know how to create a VPC from memory for exam!\*
+### \*Know how to create a VPC from memory for exam!\*
 
 -	When creating an AMI, on Step 4(Add storage) “Delete on Termination” is checked and not encrypted by default (i.e. Termination protection is turned off by default):
 
@@ -385,7 +385,7 @@ Pricing models:
 
 <br>
 
-#### Security Group Basics
+### Security Group Basics
 
 -	All inbound traffic is blocked by default (except for ssh for listros and rdp for windows)
 -	All outbound traffic is allowed by default
@@ -402,7 +402,7 @@ Pricing models:
 
 <br>
 
-#### Volumes vs Snapshots
+### Volumes vs Snapshots
 
 -	Volume
 	-	A volume is a virtual hard disk (think VMDK)
@@ -421,7 +421,7 @@ Pricing models:
 
 <br>
 
-#### RAID, Volumes & Snapshots
+### RAID, Volumes & Snapshots
 
 -	RAID = Redundant Array of Independent Disks
 	-	RAID 0 – Striped, no redundancy, good performance
@@ -439,7 +439,7 @@ Pricing models:
 
 <br>
 
-#### Create an AMI (Amazon Machine Image)
+### Create an AMI (Amazon Machine Image)
 
 -	AMI = template VM
 -	Are regional. You can only launch an AMI from the region where it’s stored. You CAN copy AMI’s to other regions using the command line/console/API.
@@ -455,7 +455,7 @@ Pricing models:
 
 <br>
 
-#### AMI Types (EBS vs Instance Store)
+### AMI Types (EBS vs Instance Store)
 
 -	You can select your AMI based on:
 	-	Region
@@ -478,7 +478,7 @@ Pricing models:
 
 <br>
 
-#### Elastic Load Balancers (ELB)
+### Elastic Load Balancers (ELB)
 
 -	ELB is never given a static IP address, just DNS name.
 -	ELBs can be “In Service” or “Out of Service”
@@ -492,7 +492,7 @@ Pricing models:
 
 <br>
 
-#### CloudWatch – Performance Monitoring Service
+### CloudWatch – Performance Monitoring Service
 
 -	Standard monitoring = 5 minutes
 	-	Turned on by default
@@ -506,13 +506,13 @@ Pricing models:
 
 <br>
 
-#### AWS Command Line
+### AWS Command Line
 
 – [http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) - You can only assign a role to an EC2 instance during its creation! - AWS command line preinstalled on the AWS AMI - Commands: - *Aws configure* - Input access key, Secret Access key, default region name (in doc above) & output format (I just hit enter) - *Aws s3 help* - Make Bucket = mb - Remove Bucket = rb ![Image01](./pictures/060116_1515_AWSCertifie3.png?raw=true) - If you use roles, you don’t have to store your credentials on your EC2 instance (which is a security risk)
 
 <br>
 
-#### IAM – Roles
+### IAM – Roles
 
 -	Roles can only be assigned to an EC2 instance when you are launching it.
 -	Roles are more secure than storing access keys on individual EC2 instances
@@ -529,7 +529,7 @@ Pricing models:
 
 <br>
 
-#### Bash Scripting
+### Bash Scripting
 
 -	Write a script that EC2 instance will run when 1<sup>st</sup> being provisioned
 	-	Install apache
@@ -548,7 +548,7 @@ Pricing models:
 
 <br>
 
-#### Instance Metadata
+### Instance Metadata
 
 -	How to access instance metadata from within an EC2 instance. From CLI:
 	-	Sudo su
@@ -562,7 +562,7 @@ Pricing models:
 
 <br>
 
-#### Auto scaling Groups
+### Auto scaling Groups
 
 -	Have to have a launch configuration to have an auto scaling group
 -	Can create rules to spin-up and/or shut down instances based on monitor triggers
@@ -570,7 +570,7 @@ Pricing models:
 
 <br>
 
-#### EC2 Placement Groups
+### EC2 Placement Groups
 
 -	A logical grouping of instances within a single AZ.
 	-	Can’t span AZs (duh)
@@ -590,7 +590,7 @@ Pricing models:
 
 <br>
 
-#### Elastic File System (not in exam yet)
+### Elastic File System (not in exam yet)
 
 -	File storage for EC2 instances
 -	Elastic capacity
@@ -604,7 +604,7 @@ Pricing models:
 
 <br>
 
-#### Lambda concepts
+### Lambda concepts
 
 -	Compute service that runs your code in response to events and it automatically manages the underlying compute resources for you
 -	Can automatically run code in response to events
@@ -620,7 +620,7 @@ Pricing models:
 
 <br>
 
-#### Route53 (DNS)
+### Route53 (DNS)
 
 -	IPv6 not fully supported yet.
 -	Alias records work like CNAME records
@@ -634,7 +634,7 @@ Pricing models:
 
 <br>
 
-#### DNS Routing Policies:
+### DNS Routing Policies:
 
 -	Simple
 	-	Default when you create a new record set
@@ -657,7 +657,7 @@ Pricing models:
 
 <br>
 
-#### Databases
+### Databases
 
 -	RDS – Been around since the 70s. Database: tables, rows, fields (columns) -&gt; think spreadsheet
 	-	Read this FAQ: https://aws.amazon.com/rds/faqs/
@@ -820,7 +820,7 @@ Pricing models:
 
 <br>
 
-#### VPC (Virtual Private Cloud)
+### VPC (Virtual Private Cloud)
 
 -	**For the exam know how to build a custom VPC from memory**
 
@@ -896,7 +896,7 @@ Pricing models:
 
 <br>
 
-#### Network Address Translation (NAT)
+### Network Address Translation (NAT)
 
 -	Allows your instances that do not have internet access the ability to access the internet via a NAT server instance
 -	create security group
@@ -907,7 +907,7 @@ Pricing models:
 
 <br>
 
-#### Access Control Lists (ACLs)
+### Access Control Lists (ACLs)
 
 -	A numbered list of rules (in order, lowest applies first)
 -	Put down network access lists across the entire subnet
@@ -919,11 +919,11 @@ Pricing models:
 
 <br>
 
-#### Application Services
+### Application Services
 
 <br>
 
-#### SQS – most important service going into exam
+### SQS – most important service going into exam
 
 -	Read FAQ for SQS for exam: https://aws.amazon.com/sqs/faqs/
 -	A distributed message queueing service that sits between a “producer” and “consumer” to quickly and reliably cache that message.
@@ -954,7 +954,7 @@ Pricing models:
 
 <br>
 
-#### SWF – Simple Workflow Service
+### SWF – Simple Workflow Service
 
 -	Makes it easy to coordinate work across distributed app components
 -	Enables apps to be designed as a coordination of tasks
@@ -982,7 +982,7 @@ Pricing models:
 
 <br>
 
-#### SNS – Simple Notification Service
+### SNS – Simple Notification Service
 
 -	Web service to setup, operate & send notifications from AWS.
 -	Scalable, flexible, cost-effective way to publish messages from an app & deliver them to subscribers or other apps
@@ -1031,7 +1031,7 @@ Pricing models:
 
 <br>
 
-#### Elastic Transcoder
+### Elastic Transcoder
 
 -	Media transcoder in the cloud
 -	Converts media file from original source format into different formats that will play on different endpoint devices
@@ -1044,17 +1044,17 @@ Pricing models:
 
 <br>
 
-#### White Paper Breakdown:
+### White Paper Breakdown:
 
 **Overview of AWS: \*\*\[**http://d0.awsstatic.com/whitepapers/aws-overview.pdf**](http://d0.awsstatic.com/whitepapers/aws-overview.pdf\)
 
 <br>
 
-##### What is cloud computing? On demand delivery of IT resources and apps via the Internet w/ pay-as-you-go pricing. Cloud providers maintain the network-connected hardware while the consumer provisions and use what you need via web applications.
+#### What is cloud computing? On demand delivery of IT resources and apps via the Internet w/ pay-as-you-go pricing. Cloud providers maintain the network-connected hardware while the consumer provisions and use what you need via web applications.
 
 <br>
 
-##### 6 Advantages of Cloud:
+#### 6 Advantages of Cloud:
 
 1.	Trade capex for “variable expense”
 2.	Benefit from economies of scale
@@ -1071,11 +1071,11 @@ Overview of Security Processes: [**http://d0.awsstatic.com/whitepapers/Security/
 
 <br>
 
-##### Shared Security Model – AWS is responsible for securing the underlying infrastructure. YOU are responsible for anything you put on or connects to the cloud
+#### Shared Security Model – AWS is responsible for securing the underlying infrastructure. YOU are responsible for anything you put on or connects to the cloud
 
 <br>
 
-##### AWS responsibilities:
+#### AWS responsibilities:
 
 -	Infrastructure (hardware, virtual infrastructure, software, networking, facilities, infra security)
 -	Security configuration of it’s managed services (DynamoDB, RDS, Redshift, Elastic MapReduce, WorkSpaces)
@@ -1087,13 +1087,13 @@ Customer responsibilities:
 
 <br>
 
-##### Storage Decommissioning:
+#### Storage Decommissioning:
 
 -	AWS uses NIST 800-88 to destroy data. All decommed magnetic storage devices are degaussed and physically destroyed.
 
 <br>
 
-##### Network Security:
+#### Network Security:
 
 -	Transmission Protection – Use HTTPS using SSL
 -	For customers who need additional layers of network security, AWS provides VPCs & the ability to use an IPSec VPN between their datacenter & the VPC
@@ -1106,7 +1106,7 @@ Customer responsibilities:
 
 <br>
 
-##### AWS Credentials
+#### AWS Credentials
 
 -	Passwords
 -	MFA
@@ -1116,7 +1116,7 @@ Customer responsibilities:
 
 <br>
 
-##### AWS Trusted Advisor
+#### AWS Trusted Advisor
 
 -	Inspects your AWS environment & makes recommendations to save money, improve performance & close security gaps:
 -	Provides alerts for several of the most common security misconfigs:
@@ -1128,7 +1128,7 @@ Customer responsibilities:
 
 <br>
 
-##### Instance Isolation
+#### Instance Isolation
 
 -	Instances on same physical machine are isolated from each other via the Xen hypervisor.
 -	The AWS firewall resides within the hypervisor layer, between the physical network interface & the instances virtual interface.
@@ -1162,7 +1162,7 @@ Customer responsibilities:
 
 <br>
 
-#### Risk and Compliance: http://d0.awsstatic.com/whitepapers/compliance/AWS_Risk_and_Compliance_Whitepaper.pdf
+### Risk and Compliance: http://d0.awsstatic.com/whitepapers/compliance/AWS_Risk_and_Compliance_Whitepaper.pdf
 
 -	AWS mgmt. has a strategic business plan which includes risk identification & mitigation plans. This is re-evaluated at least bi-annually.
 -	AWS security regularly scans all Internet facing service endpoint IP addresses for vulnerabilities (these scans do not include customer instances)
@@ -1186,7 +1186,7 @@ Customer responsibilities:
 
 <br>
 
-##### AWS Platform:
+#### AWS Platform:
 
 ![Image08](./pictures/060116_1515_AWSCertifie8.png?raw=true)
 
@@ -1200,7 +1200,7 @@ Customer responsibilities:
 
 <br>
 
-##### Business Benefits:
+#### Business Benefits:
 
 -	Almost 0 upfront infrastructure investment
 -	JIT infrastructure
@@ -1210,7 +1210,7 @@ Customer responsibilities:
 
 <br>
 
-##### Technical Benefits:
+#### Technical Benefits:
 
 -	Automation – “Scriptable infrastructure”
 -	Auto-scaling
@@ -1222,7 +1222,7 @@ Customer responsibilities:
 
 <br>
 
-##### Design for Failure:
+#### Design for Failure:
 
 -	Assume that hardware will fail & outages will occur
 -	Assume that you will be overloaded with requests
@@ -1230,7 +1230,7 @@ Customer responsibilities:
 
 <br>
 
-##### Decouple your components:
+#### Decouple your components:
 
 -	Build components that do not have tight dependencies so that if 1 component dies/sleeps/is busy, the other components are built so as to continue work as if no failure is happening.
 -	If you see decoupling in exam, think SQS
@@ -1238,7 +1238,7 @@ Customer responsibilities:
 
 <br>
 
-##### Implement Elasticity:
+#### Implement Elasticity:
 
 -	Proactive Cyclic Scaling – periodic scaling that occurs @ fixed intervals (daily, weekly, monthly, quarterly) i.e. “Payroll Monday”
 -	Proactive Event Scaling – when you are expecting a big surge of traffic (Black Friday, new product launch, marketing campaign)
@@ -1246,13 +1246,13 @@ Customer responsibilities:
 
 <br>
 
-##### Secure Your Application:
+#### Secure Your Application:
 
 -	Only have the ports open to/from your various stacks to allow communication, no more (duh)
 
 <br>
 
-##### Consolidated Billing
+#### Consolidated Billing
 
 -	1 paying account for all linked accounts in an org
 -	Paying account gets 1 monthly bill
@@ -1264,7 +1264,7 @@ Customer responsibilities:
 
 <br>
 
-##### Resource Groups & Tagging
+#### Resource Groups & Tagging
 
 -	Tags = Key/Value pairs attached to AWS resources
 -	Metadata
@@ -1283,7 +1283,7 @@ Customer responsibilities:
 
 <br>
 
-##### Active Directory Integration:
+#### Active Directory Integration:
 
 -	User browses to ADFS URL
 -	User authenticates against AD
