@@ -41,7 +41,7 @@ AWS Amazon web services Platform Concepts and Components
 	-	AWS cloud에 있는 Virtual instance
 -	Autoscaling
 	-	EC2 instance를 자동으로 추가 시킨다.
--	ELB (Elastic Lod Balancer)
+-	ELB (Elastic Load Balancer)
 	-	web service나 application service 등에 사용되는 로드 발란서
 -	Workspace
 	-	VDI platform
@@ -1050,7 +1050,9 @@ Pricing models:
 
 <br>
 
-#### What is cloud computing? On demand delivery of IT resources and apps via the Internet w/ pay-as-you-go pricing. Cloud providers maintain the network-connected hardware while the consumer provisions and use what you need via web applications.
+#### What is cloud computing?
+
+-	On demand delivery of IT resources and apps via the Internet w/ pay-as-you-go pricing. Cloud providers maintain the network-connected hardware while the consumer provisions and use what you need via web applications.
 
 <br>
 
